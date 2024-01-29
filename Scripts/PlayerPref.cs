@@ -41,7 +41,7 @@ public class PlayerPref : MonoBehaviour
         for (int i = 0; i <= Value; i++)
         {
             AllButton[i].interactable = true;
-            AllButton[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            //AllButton[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 

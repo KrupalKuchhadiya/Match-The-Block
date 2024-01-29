@@ -23,9 +23,12 @@ public class PlayerScript : MonoBehaviour
         flag = true;
         if (flag == true)
         {
-            PlayerAnimation.SetBool("walk", true);
-            this.gameObject.transform.DOMove(new Vector3(GameManager.Instance.EmptyObject[GameManager.Instance.Count].transform.position.x, GameManager.Instance.EmptyObject[GameManager.Instance.Count].transform.position.y, GameManager.Instance.EmptyObject[GameManager.Instance.Count].transform.position.z),3);
             this.gameObject.transform.parent = GameManager.Instance.EmptyObject[GameManager.Instance.Count].transform;
+            PlayerAnimation.SetBool("happy", false);
+            PlayerAnimation.SetBool("walk", true);
+            this.gameObject.transform.DOMove(new Vector3(GameManager.Instance.EmptyObject[GameManager.Instance.Count].transform.position.x,
+                                                         GameManager.Instance.EmptyObject[GameManager.Instance.Count].transform.position.y, 
+                                                         GameManager.Instance.EmptyObject[GameManager.Instance.Count].transform.position.z),3);
             GameManager.Instance.Player.Add(this.gameObject);
             StartCoroutine(GoToHappy(2f));
             //for (int i = 0; i <= GameManager.Instance.EmptyObject.Count; i++)
